@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MY Game!</title>
-    <meta charset=utf-8>
-    <meta name=description content="">
-    <meta name=viewport content="width=500, initial-scale=1">
+    <title>15 Puzzle The Game</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <script src="script.js"></script>
+    <iframe src="silence.mp3" allow="auto" style="display: none;"></iframe>
+    <audio autoplay loop><source src="song.mp3" type="audio/mpeg"></audio>
     <h1>15 PUZZLE THE GAME</h1>
-    <h2>Time selected or maybe player name</h2>
+    <h2>Try to beat this game your mortal!</h2>
+
+    <div id="myModalStart" class="modalStart">
+      <div class="modal-content">
+        <p>Welcome To 15 PUZZLE THE GAME</p>
+        <p>To win this game you have to arrange all number start with 1 to 15</p>
+        <p>Hurry time is running out!</p>
+        <div id="startControl">
+            <div class="box" onclick="closeStart()">Let's play!</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="myModalEnd" class="modal">
+      <div class="modal-content">
+        <p id="alertWin"></p>
+        <div id="startControl">
+            <div class="box" onclick="closeEnd()">Let's play again!</div>
+        </div>
+      </div>
+    </div>
+
     <div id="game">
         <div>1</div>
         <div>2</div>
@@ -27,15 +47,12 @@
         <div>13</div>
         <div>14</div>
         <div>15</div>
+        <div></div>
     </div>
-    <h2>Time left</h2>
-    <h3>Hint:</h3>
+
     <div class="quotes">
-        <p><b>Note: </b>When I’m done, half of humanity will still exist. Perfectly balanced, as all things should be. I hope they remember you.</p>
+        <p>When I’m done, half of humanity will still exist. Perfectly balanced, as all things should be. I hope they remember you.</p>
     </div>
-    <div id="controls">
-        <button id="shufflebutton" class="box" onclick="shuffle()">Shuffle</button>
-        <button id="reset" class="box2" onclick="reset()">Reset</button>
-    </div>
+
 </body>
 </html>
